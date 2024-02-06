@@ -1,8 +1,28 @@
-# React + Vite
+# React State and Props
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+In this class we've learned about the state and props in React.
 
-Currently, two official plugins are available:
+The state hook is used to create a state variable and the props are used to pass data from parent to child.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The state variable makes the component re-render when its value changes.
+
+To change the value of a state variable, we use the function that is returned by the useState hook.
+
+```jsx
+import React, { useState } from 'react';
+
+function App() {
+  const [count, setCount] = useState(0); // the setCount function is used to change the value of the count variable whenever we want
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}> {/* in this case we are using the setCount function to change the value of the count variable */}
+        Click me
+      </button>
+    </div>
+  );
+}
+
+export default App;
+```
